@@ -1,9 +1,15 @@
-import "./single.css"
+import "./single.css";
+import Sidebar from "../../components/sidebar/Sidebar";
+import SinglePost from "../../components/singlePost/SinglePost"
 
 const Single = () => {
   return (
-    <div>Single</div>
-  )
-}
+    <div className="single">
+      {/* post */}
+      <SinglePost />
+      <Sidebar />
+    </div>
+  );
+};
 
-export default Single
+export default Single;

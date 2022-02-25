@@ -8,15 +8,16 @@ import Single from "./pages/single/Single";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+  const user = false
   return (
     <BrowserRouter>
-    <TopBar />
+      <TopBar />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/write" element={<Write />} />
+        <Route path="/login" element={user ? <HomePage /> : <Login />} />
+        <Route path="/register" element={user ? <HomePage /> : <Register />} />
+        <Route path="/settings" element={user ? <Settings /> : <Register />} />
+        <Route path="/write" element={user ? <Write /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
       </Routes>
     </BrowserRouter>
